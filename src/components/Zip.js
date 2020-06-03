@@ -5,15 +5,8 @@ function Zip(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        const zipCodePattern = /^\d{4}$/;
-        const valid = zipCodePattern.test(event.target.value);
-        if (!valid) {
-            setValidationError('Should be a city in New Zealand');
-            props.clearResponse();
-        } else {
-            setValidationError('');
-            props.onZipChange(event.target.value);
-        }
+        setValidationError('');
+        props.onZipChange(event.target.value);
     };
 
     return (
